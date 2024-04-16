@@ -1,0 +1,64 @@
+.onboarding {
+  font-family: "Euclid Circular Regular";
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.onboarding_left {
+  display: flex;
+  flex: 0.4;
+  background: linear-gradient(180deg, #a80097 0%, #6900d2 100%);
+  align-items: center;
+  justify-content: center;
+}
+
+.onboarding_right {
+  display: flex;
+  flex: 0.6;
+  background-color: white;
+}
+
+.onboarding_logo_name {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 30%;
+  align-items: center;
+  justify-content: center;
+}
+
+.onboarding_logo {
+  width: 30%;
+  height: 30%;
+}
+
+.onboarding_logo_name {
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 567px) {
+  .onboarding {
+    flex-direction: column;
+  }
+
+  .onboarding_left {
+    flex: 0.15;
+  }
+
+  .onboarding_right {
+    flex: 0.85;
+  }
+
+  .onboarding_left {
+    display: none;
+  }
+
+  .onboarding_logo_name {
+    width: 50%;
+    height: 70%;
+    display: none;
+  }
+}

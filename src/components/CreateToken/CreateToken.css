@@ -1,0 +1,234 @@
+.create_nft {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: "Euclid Circular Regular";
+}
+
+.create_nft_left {
+  display: flex;
+  flex-direction: column;
+  flex: 0.6;
+  box-sizing: border-box;
+}
+
+.create_nft_left_top {
+  display: flex;
+  flex: 0.6;
+  align-items: center;
+  justify-content: center;
+}
+
+.create_nft_content_box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  box-sizing: border-box;
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 58.33px;
+  text-align: left;
+  color: rgba(51, 34, 124, 1);
+  gap: 10%;
+}
+
+.create_nft_points {
+  color: rgba(135, 135, 135, 1);
+}
+
+.create_nft_left_bottom {
+  flex: 0.4;
+}
+
+.create_nft_right {
+  display: flex;
+  flex: 0.4;
+  align-items: center;
+  justify-content: center;
+}
+
+.create_wallet_form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+  padding: 9%;
+  box-sizing: border-box;
+  background: rgba(245, 245, 245, 1);
+}
+
+.create_wallet_form > h2 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 43.11px;
+  text-align: left;
+  color: rgba(51, 34, 124, 1);
+  margin-bottom: 10%;
+}
+
+.form-group {
+  margin-bottom: 10%;
+}
+
+label {
+  display: block;
+  margin-bottom: 4%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.29px;
+  text-align: left;
+  color: rgba(135, 135, 135, 1);
+}
+
+input,
+textarea {
+  font-family: "Euclid Circular Regular";
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 16px;
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Euclid Circular Regular";
+  opacity: 0.5;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.create_nft_button_container {
+  display: flex;
+  width: 100%;
+  height: 15%;
+  justify-content: center;
+  align-items: center;
+}
+
+.create_btn {
+  display: block;
+  width: 50%;
+  padding: 10px;
+  background: linear-gradient(90deg, #a80097 0%, #6900d2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+.create_btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.create_btn:hover {
+  background: linear-gradient(90deg, #6900d2 0%, #a80097 100%);
+}
+
+.input-container {
+  position: relative;
+}
+
+.char-count {
+  position: absolute;
+  bottom: 5px;
+  right: 0px;
+  font-size: 12px;
+  color: #888;
+}
+
+@media screen and (max-width: 767px) {
+  .create_nft {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .create_nft_left {
+    flex: 1;
+    order: 1;
+  }
+
+  .create_nft_left_top {
+    padding: 20px;
+  }
+
+  .create_nft_content_box {
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .create_nft_content_box > h1 {
+    font-size: 25px;
+  }
+
+  .create_nft_points {
+    font-size: 14px;
+  }
+
+  .create_nft_right {
+    flex: 1;
+    order: 2;
+  }
+
+  .create_wallet_form {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .create_wallet_form > h2 {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+
+  .create_nft_button_container {
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .create_btn {
+    width: 100%;
+  }
+
+  .input-container {
+    position: relative;
+    width: 90%;
+  }
+}

@@ -1,0 +1,159 @@
+.create_trustline {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: "Euclid Circular Regular";
+}
+
+.create_trustline_left {
+  display: flex;
+  flex-direction: column;
+  flex: 0.6;
+  box-sizing: border-box;
+}
+
+.create_trustline_left_top {
+  display: flex;
+  flex: 0.6;
+  align-items: center;
+  justify-content: center;
+}
+
+.create_trustline_content_box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  box-sizing: border-box;
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 58.33px;
+  text-align: left;
+  color: rgba(51, 34, 124, 1);
+  gap: 10%;
+}
+
+.create_trustline_points {
+  color: rgba(135, 135, 135, 1);
+}
+
+.create_trustline_left_bottom {
+  flex: 0.4;
+}
+
+.create_trustline_right {
+  display: flex;
+  flex: 0.4;
+  align-items: center;
+  justify-content: center;
+}
+
+.create_trustline_form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+  padding: 9%;
+  box-sizing: border-box;
+  background: rgba(245, 245, 245, 1);
+}
+
+.create_trustline_form > h2 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 43.11px;
+  text-align: left;
+  color: rgba(51, 34, 124, 1);
+  margin-bottom: 10%;
+}
+
+.form-group {
+  margin-bottom: 10%;
+}
+
+label {
+  display: block;
+  margin-bottom: 4%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.29px;
+  text-align: left;
+  color: rgba(135, 135, 135, 1);
+}
+
+input,
+textarea {
+  font-family: "Euclid Circular Regular";
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 16px;
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Euclid Circular Regular";
+  opacity: 0.5;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.create_trustline_button_container {
+  display: flex;
+  width: 100%;
+  height: 15%;
+  justify-content: center;
+  align-items: center;
+}
+
+.create_btn {
+  display: block;
+  width: 50%;
+  padding: 10px;
+  background: linear-gradient(90deg, #a80097 0%, #6900d2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+.create_btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.create_btn:hover {
+  background: linear-gradient(90deg, #6900d2 0%, #a80097 100%);
+}
+
+.input-container {
+  position: relative;
+}
+
+.char-count {
+  position: absolute;
+  bottom: 5px;
+  right: 0px;
+  font-size: 12px;
+  color: #888;
+}

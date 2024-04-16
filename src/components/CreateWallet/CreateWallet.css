@@ -1,0 +1,357 @@
+.create_wallet_container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.create_wallet_box {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  height: 85%;
+}
+
+.create_wallet_header {
+  width: 100%;
+  height: 20%;
+}
+
+.create_wallet_header_box {
+  display: flex;
+  flex-direction: column;
+  height: 65%;
+  width: 30%;
+  justify-content: space-evenly;
+}
+
+.create_wallet_header_title {
+  font-weight: 600;
+  font-size: 58.65px;
+  line-height: 74.37px;
+  color: rgba(51, 34, 124, 1);
+  letter-spacing: 5px;
+}
+
+.create_wallet_header_desc {
+  font-weight: 400;
+  font-size: 14.76px;
+  line-height: 18.71px;
+  color: rgba(135, 135, 135, 1);
+}
+
+.create_wallet_desc {
+  width: 100%;
+  height: 30%;
+}
+
+.create_wallet_desc_box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.create_wallet_desc_title {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 43.11px;
+  text-align: left;
+  color: rgba(51, 34, 124, 1);
+}
+
+.create_wallet_desc_desc {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 21.66px;
+  text-align: left;
+  color: rgba(81, 81, 81, 1);
+}
+
+.create_wallet_content {
+  width: 100%;
+  height: 60%;
+}
+
+.create_wallet_content_box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content_box_split_top {
+  display: flex;
+  flex: 0.7;
+}
+
+.content_box_split_bottom {
+  display: flex;
+  flex: 0.3;
+  padding-left: 2%;
+  padding-right: 5%;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.content_box_left {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  padding: 2%;
+  box-sizing: border-box;
+  gap: 10%;
+}
+
+.content_box_right {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  padding: 2%;
+  box-sizing: border-box;
+  gap: 10%;
+}
+
+.create_wallet_pub_key_sec {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+}
+
+.create_wallet_pub_key_sec > h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.82px;
+  text-align: left;
+  color: rgba(38, 50, 56, 1);
+  margin-bottom: 3%;
+}
+
+.key_box {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 17px 20px;
+  border-radius: 7px;
+  border: 1px solid rgba(232, 232, 232, 1);
+  background: rgba(255, 255, 255, 1);
+  margin-bottom: 1.5%;
+}
+
+.create_wallet_pub_key_sec > p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.75px;
+  text-align: left;
+  color: rgba(135, 135, 135, 1);
+  cursor: pointer;
+}
+
+.create_wallet_mpin_sec {
+  flex: 0.3;
+  margin-top: 5%;
+}
+
+.create_wallet_mpin_sec > h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.82px;
+  text-align: left;
+  color: rgba(38, 50, 56, 1);
+  margin-bottom: 3%;
+}
+
+.create_wallet_input_container {
+  position: relative;
+}
+
+.password_check {
+  position: absolute;
+  bottom: 20%;
+  right: 8%;
+  font-size: 12px;
+  color: #888;
+}
+
+.confirm_password_check {
+  position: absolute;
+  bottom: 35%;
+  right: 10.5%;
+  font-size: 12px;
+  color: #888;
+}
+
+.input_box {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 17px 20px;
+  border-radius: 7px;
+  border: 1px solid rgba(232, 232, 232, 1);
+  background: rgba(255, 255, 255, 1);
+  margin-bottom: 1.5%;
+}
+
+.create_wallet_button {
+  width: 30%;
+  height: 50%;
+  border-radius: 5px;
+  background: linear-gradient(92.29deg, #f24ba7 0%, #6929f2 100%);
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30.43px;
+  color: rgba(255, 255, 255, 1);
+  padding: 2%;
+  cursor: pointer;
+  margin-top: 5%;
+}
+
+.create_wallet_button:disabled {
+  opacity: 0.5;
+}
+
+.content_button_para {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: rgba(135, 135, 135, 1);
+  cursor: pointer;
+  height: 50%;
+}
+
+@media screen and (max-width: 567px) {
+  .create_wallet_box {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .create_wallet_header {
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .create_wallet_header_box {
+    width: 100%;
+    text-align: center;
+  }
+
+  .create_wallet_header_title {
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .create_wallet_header_desc {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 30px;
+  }
+
+  .create_wallet_desc {
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .create_wallet_desc_box {
+    width: 100%;
+    text-align: center;
+  }
+
+  .create_wallet_desc_title {
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 20px;
+  }
+
+  .create_wallet_content {
+    height: auto;
+  }
+
+  .create_wallet_content_box {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .content_box_left,
+  .content_box_right {
+    flex: 1;
+    padding: 2%;
+    box-sizing: border-box;
+  }
+
+  .create_wallet_pub_key_sec,
+  .create_wallet_mpin_sec {
+    flex: 1;
+    margin-bottom: 30px;
+  }
+
+  .create_wallet_desc_desc {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .key_box,
+  .input_box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .create_wallet_button {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 30px;
+  }
+
+  .key_box,
+  .input_box {
+    width: 80%;
+    height: 5%;
+    margin-bottom: 20px;
+  }
+
+  .key_box > p,
+  .input_box {
+    font-size: 12px;
+  }
+
+  .content_box_split_top {
+    flex-direction: column;
+  }
+
+  .create_wallet_button {
+    width: 30%;
+    height: 50%;
+    border-radius: 5px;
+    background: linear-gradient(92.29deg, #f24ba7 0%, #6929f2 100%);
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30.43px;
+    color: rgba(255, 255, 255, 1);
+    padding: 2%;
+    cursor: pointer;
+    margin-top: 5%;
+  }
+
+  .password_check {
+    bottom: 32%;
+    right: 10%;
+  }
+
+  .confirm_password_check {
+    bottom: 50%;
+    right: 12%;
+  }
+}

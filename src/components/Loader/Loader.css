@@ -1,0 +1,39 @@
+@keyframes load {
+  from {
+    stroke-dashoffset: 775.6199340820312;
+  }
+}
+
+@keyframes color {
+  33% {
+    stroke: #00c4c9;
+  }
+  66% {
+    stroke: magenta;
+  }
+}
+
+.loader-wrapper {
+  display: flex;
+  width: 50vw;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 205px;
+  height: 120px;
+}
+
+.loader-path {
+  stroke: cyan;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 193.904983521;
+  fill: none;
+  animation: load 4s linear infinite, color 3s linear infinite;
+}
