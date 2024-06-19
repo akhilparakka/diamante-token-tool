@@ -145,6 +145,10 @@
   margin-bottom: 1.5%;
 }
 
+.error {
+  border-color: red !important;
+}
+
 .create_wallet_pub_key_sec > p {
   font-size: 14px;
   font-weight: 400;

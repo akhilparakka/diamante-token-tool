@@ -191,8 +191,8 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 25%;
+  left: 35%;
   transform: translate(-50%, -50%);
   width: 0px;
   height: 0px;
@@ -204,10 +204,10 @@ body {
   justify-content: center;
 }
 .modal_header {
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .modal.open {

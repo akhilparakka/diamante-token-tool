@@ -48,9 +48,9 @@ const Login = ({ diam_details }) => {
           <div className="login_box">
             <div className="login_header">
               <div className="login_header_box">
-                <h2 className="login_header_title">Mintify</h2>
+                <h2 className="login_header_title">Token Forge</h2>
                 <p className="login_header_desc">
-                  A Minting tool by Diamante Net
+                  A Token creation tool by Diamante Net
                 </p>
               </div>
             </div>

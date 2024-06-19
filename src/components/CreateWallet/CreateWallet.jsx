@@ -105,9 +105,9 @@ const CreateWallet = ({ walletData, setWalletData }) => {
       <div className="create_wallet_box">
         <div className="create_wallet_header">
           <div className="create_wallet_header_box">
-            <h2 className="create_wallet_header_title">Mintify</h2>
+            <h2 className="create_wallet_header_title">Token Forge</h2>
             <p className="create_wallet_header_desc">
-              A Minting tool by Diamante Net
+              A Token creation tool by Diamante Net
             </p>
           </div>
         </div>

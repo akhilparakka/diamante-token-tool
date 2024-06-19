@@ -3,10 +3,18 @@ import { useState } from "react";
 import axios from "axios";
 import Loader from "../../assets/loader.svg";
 import Modal from "../Modal/Modal";
+import {
+  Asset,
+  BASE_FEE,
+  Horizon,
+  Keypair,
+  Operation,
+  TransactionBuilder,
+} from "@stellar/stellar-sdk";
 
 const CreateTrustline = ({ wallet_data, setActiveItem }) => {
   const [tokenName, setTokenName] = useState({ value: "", charCount: 0 });
-  const [symbol, setSymbol] = useState({ value: "", charCount: 0 });
+  const [amount, setAmount] = useState({ value: "", charCount: 0 });
   const [issuerAddress, setIssuerAddress] = useState({
     value: "",
     charCount: 0,
@@ -39,42 +47,81 @@ const CreateTrustline = ({ wallet_data, setActiveItem }) => {
     setIsModal((prevState) => !prevState);
   };
 
-  // const handleCreateTokenClick = async (e) => {
-  //   e.preventDefault();
-  //   setIsLoading(true);
+  const handleCreateTrustline = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
 
-  //   try {
-  //     let headersList = {
-  //       Accept: "*/*",
-  //       "Content-Type": "application/json",
-  //     };
+    try {
+      const server = new Horizon.Server("https://diamtestnet.diamcircle.io/");
 
-  //     let bodyContent = JSON.stringify({
-  //       publicKey: wallet_data.public_key,
-  //       privateKey: wallet_data.secret_key,
-  //       tokenSupply: parseInt(initialSupply.value),
-  //       tokenName: tokenName.value,
-  //     });
+      const sourceKeyPair = Keypair.fromSecret(wallet_data.secret_key);
 
-  //     let reqOptions = {
-  //       url: "http://10.0.0.233:3000/create-token",
-  //       method: "POST",
-  //       headers: headersList,
-  //       data: bodyContent,
-  //     };
+      const sourceAccount = await server.loadAccount(sourceKeyPair.publicKey());
 
-  //     let response = await axios.request(reqOptions);
-  //     setSuccessData(response.data);
+      let transaction;
 
-  //     if (response.status === 200) {
-  //       setIsModal(true);
-  //       setIsLoading(false);
-  //     }
-  //   } catch (e) {
-  //     setIsLoading(false);
-  //     console.log(e);
-  //   }
-  // };
+      transaction = new TransactionBuilder(sourceAccount, {
+        fee: BASE_FEE,
+        networkPassphrase: "Diamante Testnet",
+      })
+        .addOperation(
+          Operation.changeTrust({
+            asset: new Asset(tokenName.value, issuerAddress.value),
+          })
+        )
+        .setTimeout(30)
+        .build();
+      transaction.sign(sourceKeyPair);
+      let res = await server.submitTransaction(transaction);
+
+      const response = {
+        data: res,
+        title: "Trustline created!",
+        field1: "Source Account",
+        field2: "Transaction Hash",
+      };
+      if (res.successful === true) {
+        setSuccessData(response);
+        setIsLoading(false);
+        setIsModal(true);
+      }
+    } catch (e) {
+      console.log(e);
+      setIsLoading(false);
+    }
+
+    // try {
+    //   let headersList = {
+    //     Accept: "*/*",
+    //     "Content-Type": "application/json",
+    //   };
+
+    //   let bodyContent = JSON.stringify({
+    //     publicKey: wallet_data.public_key,
+    //     privateKey: wallet_data.secret_key,
+    //     tokenSupply: parseInt(initialSupply.value),
+    //     tokenName: tokenName.value,
+    //   });
+
+    //   let reqOptions = {
+    //     url: "https://tokentoolsbackend.diamcircle.com/create-token",
+    //     method: "POST",
+    //     headers: headersList,
+    //     data: bodyContent,
+    //   };
+
+    //   let response = await axios.request(reqOptions);
+    //   setSuccessData(response.data);
+
+    //   if (response.status === 200) {
+    //     setIsModal(true);
+    //     setIsLoading(false);
+    //   }
+    // } catch (e) {
+    //   setIsLoading(false);
+    //   console.log(e);
+    // }
+  };
 
   return (
     <div className="create_trustline">
@@ -132,15 +179,15 @@ const CreateTrustline = ({ wallet_data, setActiveItem }) => {
               </div>
             </div>
             {/* <div className="form-group">
-              <label>Symbol</label>
+              <label>Amount</label>
               <div className="input-container">
                 <input
                   type="text"
                   placeholder="e.g. TTN"
-                  value={symbol.value}
-                  onChange={(e) => handleInputChange(e, setSymbol, 5)}
+                  value={amount.value}
+                  onChange={(e) => handleInputChange(e, setAmount, 5)}
                 />
-                <span className="char-count">{symbol.charCount}/5</span>
+                <span className="char-count">{amount.charCount}/5</span>
               </div>
             </div> */}
             <div className="form-group">
@@ -155,24 +202,12 @@ const CreateTrustline = ({ wallet_data, setActiveItem }) => {
                 />
               </div>
             </div>
-            {/* <div className="form-group">
-              <label htmlFor="description">Description</label>
-              <div className="input-container">
-                <textarea
-                  id="description"
-                  style={{ resize: "none" }}
-                  placeholder="Description"
-                  value={description.value}
-                  onChange={(e) => handleInputChange(e, setDescription, 200)}
-                ></textarea>
-                <span className="char-count">{description.charCount}/200</span>
-              </div>
-            </div> */}
+
             <div className="create_trustline_button_container">
               <button
                 type="submit"
                 className="create_btn"
-                onClick={(e) => handleCreateTokenClick(e)}
+                onClick={(e) => handleCreateTrustline(e)}
                 disabled={!tokenName.value || !initialSupply.value || isLoading}
               >
                 {isLoading ? (

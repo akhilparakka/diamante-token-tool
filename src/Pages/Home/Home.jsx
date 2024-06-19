@@ -114,19 +114,12 @@ const Home = () => {
               <img src={ListIcon} alt="" />
               <p>Make Trustline</p>
             </li>
-            <li
-              className={`home_list_item ${activeItem === 3 ? "active" : ""}`}
-              onClick={() => handleListItemClick(3)}
-            >
-              <img src={ListIcon} alt="" />
-              <p>Manage NFT</p>
-            </li>
           </div>
         </div>
         <div className="separator"></div>
         <div className="home_left_bottom">
           <div className="home_left_footer">
-            <p>Mintify by</p>
+            <p>Token Forge by</p>
             <p>Diamante Net</p>
           </div>
         </div>
@@ -137,7 +130,10 @@ const Home = () => {
         ) : activeItem === 1 ? (
           <ManageToken wallet_data={walletData} setActiveItem={setActiveItem} />
         ) : activeItem === 2 ? (
-          <CreateTrustline />
+          <CreateTrustline
+            wallet_data={walletData}
+            setActiveItem={setActiveItem}
+          />
         ) : (
           <div></div>
         )}

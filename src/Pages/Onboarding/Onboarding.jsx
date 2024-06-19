@@ -4,6 +4,7 @@ import DiamLogoName from "../../assets/diam_logo_name.svg";
 import Intro from "../../components/Intro/Intro";
 import CreateWallet from "../../components/CreateWallet/CreateWallet";
 import { useState } from "react";
+import ImportWallet from "../../components/ImportWallet/ImportWallet";
 
 const Onboarding = () => {
   const [walletData, setWalletData] = useState({});
@@ -20,9 +21,11 @@ const Onboarding = () => {
       <div className="onboarding_right">
         {page === "intro" ? (
           <Intro setWalletData={setWalletData} setPage={setPage} />
-        ) : (
+        ) : page === "create_wallet" ? (
           <CreateWallet walletData={walletData} setWalletData={setWalletData} />
-        )}
+        ) : page === "import_wallet" ? (
+          <ImportWallet />
+        ) : null}
       </div>
     </div>
   );

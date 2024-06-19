@@ -19,27 +19,37 @@ const Modal = ({ isOpen, toggleModal, successData, setActiveItem }) => {
           <div className="modal_data">
             <div className="modal_header">
               <img src={GreenCheck} alt="" />
-              <h1>Token created succesfully</h1>
+              <h1>{successData.title}</h1>
             </div>
             <div className="modal_content">
               <div className="modal_content_item">
-                <p>Issuer address</p>
+                <p>{successData.field1}</p>
                 <div className="modal_item_box">
-                  {successData.issuanceAddress}
+                  {successData.data.source_account
+                    ? successData.data.source_account
+                    : successData.data.issuanceAddress}
                 </div>
               </div>
               <div className="modal_content_item">
-                <p>Token link</p>
+                <p>{successData.field2}</p>
                 <div
                   className="modal_item_box"
                   style={{ color: " rgba(1, 87, 155, 1)", cursor: "pointer" }}
                   onClick={() => {
-                    const url = `https://testnetexplorer.diamcircle.io/about-txHash/${successData.transactionHash}`;
+                    const url = `https://testnetexplorer.diamcircle.io/about-txHash/${
+                      successData.data.hash
+                        ? successData.data.hash
+                        : successData.data.transactionHash
+                    }`;
                     window.open(url, "_blank");
                   }}
                 >
                   {`https://testnetexplorer.diamcircle.io/about-txHash/
-                   ${successData.transactionHash}`}
+                   ${
+                     successData.data.hash
+                       ? successData.data.hash
+                       : successData.data.transactionHash
+                   }`}
                 </div>
               </div>
               <button

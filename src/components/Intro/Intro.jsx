@@ -9,12 +9,16 @@ const Intro = ({ setWalletData, setPage }) => {
     setPage("create_wallet");
   };
 
+  const handleImportWalletClick = () => {
+    setPage("import_wallet");
+  };
+
   return (
     <div className="intro_content">
       <div className="intro_content_box">
-        <div className="intro_content_inside">Mintify</div>
+        <div className="intro_content_inside">Token Forge</div>
         <div className="intro_content_inside_desc">
-          A Minting tool by Diamante Net
+          A Token creation tool by Diamante Net
         </div>
         <div className="intro_button_container">
           <button
@@ -32,6 +36,7 @@ const Intro = ({ setWalletData, setPage }) => {
               color: "transparent",
               border: "1px solid black",
             }}
+            onClick={() => handleImportWalletClick()}
           >
             Import Wallet
           </button>

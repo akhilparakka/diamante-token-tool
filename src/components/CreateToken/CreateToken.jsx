@@ -57,14 +57,22 @@ const CreateToken = ({ wallet_data, setActiveItem }) => {
       });
 
       let reqOptions = {
-        url: "http://10.0.0.233:3000/create-token",
+        url: "https://tokentoolsbackend.diamcircle.com/create-token",
         method: "POST",
         headers: headersList,
         data: bodyContent,
       };
 
       let response = await axios.request(reqOptions);
-      setSuccessData(response.data);
+
+      const response1 = {
+        data: response.data,
+        title: response.data.message,
+        field1: "Issuer Address",
+        field2: "Transaction Hash",
+      };
+
+      setSuccessData(response1);
 
       if (response.status === 200) {
         setIsModal(true);
